@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ANNI-INFO d.o.o. - Naše prednosti">
+  <title>Naše prednosti – ANNI-INFO d.o.o.</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .hero-pattern {
+      background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%);
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .advantage-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      border: 1px solid rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
+
+    .advantage-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+
+    .nav-link {
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #2d5a87;
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .mobile-menu {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .mobile-menu {
+        display: block;
+      }
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #2d5a87 0%, #1e3a5f 100%);
+      color: white;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      display: inline-block;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(45, 90, 135, 0.4);
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <!-- Logo -->
+        <div class="flex-shrink-0">
+          <a href="index.html" class="text-2xl font-bold text-gray-900 hover:text-blue-800 transition-colors">
+            ANNI-INFO d.o.o.
+          </a>
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="nav-link text-gray-700 hover:text-blue-800 transition-colors font-medium">Domov</a>
+          <a href="services.html" class="nav-link text-gray-700 hover:text-blue-800 transition-colors font-medium">Storitve</a>
+          <a href="advantages.html" class="nav-link text-gray-700 hover:text-blue-800 transition-colors font-medium">Naše prednosti</a>
+          <a href="about.html" class="nav-link text-gray-700 hover:text-blue-800 transition-colors font-medium">O nas</a>
+          <a href="contact.html" class="btn-primary">Kontakt</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+          <button id="mobile-menu-btn" class="text-gray-700 hover:text-blue-800 focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu hidden md:hidden bg-white border-t">
+      <div class="px-4 py-4 space-y-3">
+        <a href="index.html" class="block text-gray-700 hover:text-blue-800 font-medium py-2">Domov</a>
+        <a href="services.html" class="block text-gray-700 hover:text-blue-800 font-medium py-2">Storitve</a>
+        <a href="advantages.html" class="block text-gray-700 hover:text-blue-800 font-medium py-2">Naše prednosti</a>
+        <a href="about.html" class="block text-gray-700 hover:text-blue-800 font-medium py-2">O nas</a>
+        <a href="contact.html" class="btn-primary text-center mt-4">Kontakt</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-pattern min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center animate-fade-in">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+          Naše prednosti
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto">
+          Znanje, izkušnje in zanesljivost v računovodstvu
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Advantages Grid -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Advantage 1 -->
+        <div class="advantage-card">
+          <div class="flex items-start">
+            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+              <i class="fas fa-history text-xl text-blue-800"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">Dolgoletna družinska poslovna praksa</h3>
+              <p class="text-gray-600">Več kot 30 let izkušenj v računovodstvu</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Advantage 2 -->
+        <div class="advantage-card">
+          <div class="flex items-start">
+            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+              <i class="fas fa-star text-xl text-green-800"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">Stremimo k strokovnosti, prijaznosti in zanesljivosti</h3>
+              <p class="text-gray-600">Visoka kakovost storitev za vsako stranko</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Advantage 3 -->
+        <div class="advantage-card">
+          <div class="flex items-start">
+            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+              <i class="fas fa-handshake text-xl text-purple-800"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">Prevzemamo polno odgovornost za svoje delo</h3>
+              <p class="text-gray-600">Zaupanje stranke je naša prednost</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Advantage 4 -->
+        <div class="advantage-card">
+          <div class="flex items-start">
+            <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+              <i class="fas fa-bell text-xl text-yellow-800"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">Pravočasno vas obveščamo o spremembah davčne zakonodaje</h3>
+              <p class="text-gray-600">Aktualne informacije in nasvete</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Advantage 5 -->
+        <div class="advantage-card">
+          <div class="flex items-start">
+            <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+              <i class="fas fa-user-tie text-xl text-red-800"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">Stranki se posvetimo individualno</h3>
+              <p class="text-gray-600">Personalni pristop vsaki stranki</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Advantage 6 -->
+        <div class="advantage-card">
+          <div class="flex items-start">
+            <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+              <i class="fas fa-clipboard-check text-xl text-indigo-800"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">Aktivno sodelujemo pri inšpekcijskih pregledih</h3>
+              <p class="text-gray-600">Proaktivno zaščito vašega poslovanja</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Advantage 7 -->
+        <div class="advantage-card">
+          <div class="flex items-start">
+            <div class="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+              <i class="fas fa-lightbulb text-xl text-teal-800"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">Svetujemo na področju računovodstva in davčne zakonodaje</h3>
+              <p class="text-gray-600">Strateški nasveti za vaše poslovanje</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Advantage 8 -->
+        <div class="advantage-card">
+          <div class="flex items-start">
+            <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+              <i class="fas fa-map-marker-alt text-xl text-orange-800"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">Pokrivamo podravsko in osrednje slovensko regijo</h3>
+              <p class="text-gray-600">Fizična prisotnost v regijah</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Advantage 9 -->
+        <div class="advantage-card">
+          <div class="flex items-start">
+            <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+              <i class="fas fa-file-alt text-xl text-pink-800"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">Možnost urejanja dokumentacije</h3>
+              <p class="text-gray-600">Kompleksna dokumentacija na enem mestu</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Advantage 10 -->
+        <div class="advantage-card">
+          <div class="flex items-start">
+            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+              <i class="fas fa-shield-alt text-xl text-blue-800"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">Zagotovljeno varovanje osebnih podatkov</h3>
+              <p class="text-gray-600">Stricna zaščita obdelanih podatkov</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Advantage 11 -->
+        <div class="advantage-card">
+          <div class="flex items-start">
+            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+              <i class="fas fa-lock text-xl text-green-800"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">Zavarovanje računovodske odgovornosti</h3>
+              <p class="text-gray-600">Dokumentirana odgovornost in zavarovanje</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-blue-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">
+        Zahtevajte ponudbo
+      </h2>
+      <p class="text-lg text-gray-200 mb-8 max-w-2xl mx-auto">
+        Vas zanimajo naše storitve? Zahtevajte ponudbo! Ponudba za vas ni obvezujoča, zaupane podatke pa bomo uporabili izključno za izdelavo te ponudbe.
+      </p>
+      <a href="contact.html" class="btn-primary text-lg px-10 py-5">
+        <i class="fas fa-envelope mr-2"></i> Kontaktirajte nas
+      </a>
+    </div>
+  </section>
+
+  <!-- Contact Info Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-lg p-6 shadow-md">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+              <i class="fas fa-map-marker-alt text-xl text-blue-800"></i>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900">Trstenjakova ulica 1</h3>
+          </div>
+          <p class="text-gray-600">2250 Ptuj</p>
+        </div>
+
+        <div class="bg-white rounded-lg p-6 shadow-md">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+              <i class="fas fa-phone text-xl text-blue-800"></i>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900">Telefon</h3>
+          </div>
+          <p class="text-gray-600">02 771 99 71</p>
+        </div>
+
+        <div class="bg-white rounded-lg p-6 shadow-md">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+              <i class="fas fa-envelope text-xl text-blue-800"></i>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900">Email</h3>
+          </div>
+          <p class="text-gray-600">info@anni-info.si</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div class="md:col-span-2">
+          <h3 class="text-2xl font-bold mb-4">ANNI-INFO d.o.o.</h3>
+          <p class="text-gray-400 mb-6">
+            Profesionalni računovodski servis z dolgoletno tradicijo in strokovnostjo v Sloveniji.
+          </p>
+          <div class="flex gap-4">
+            <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-800 transition-colors">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-800 transition-colors">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-4">Navigacija</h4>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Domov</a></li>
+            <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Storitve</a></li>
+            <li><a href="advantages.html" class="text-gray-400 hover:text-white transition-colors">Naše prednosti</a></li>
+            <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">O nas</a></li>
+            <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Kontakt</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-4">Kontakt</h4>
+          <ul class="space-y-2 text-gray-400">
+            <li>02 771 99 71</li>
+            <li>info@anni-info.si</li>
+            <li>Ptuj, Slovenija</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+        <p>&copy; 2024 ANNI-INFO d.o.o. Vse pravice pridržane.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>

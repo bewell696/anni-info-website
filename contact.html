@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ANNI-INFO d.o.o. - Kontakt">
+  <title>Kontakt – ANNI-INFO d.o.o.</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .hero-pattern {
+      background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%);
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .contact-card {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      border: 1px solid rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+
+    .nav-link {
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #2d5a87;
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .mobile-menu {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .mobile-menu {
+        display: block;
+      }
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #2d5a87 0%, #1e3a5f 100%);
+      color: white;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      display: inline-block;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(45, 90, 135, 0.4);
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: #2d5a87;
+      box-shadow: 0 0 0 3px rgba(45, 90, 135, 0.1);
+    }
+
+    .map-container {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <!-- Logo -->
+        <div class="flex-shrink-0">
+          <a href="index.html" class="text-2xl font-bold text-gray-900 hover:text-blue-800 transition-colors">
+            ANNI-INFO d.o.o.
+          </a>
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="nav-link text-gray-700 hover:text-blue-800 transition-colors font-medium">Domov</a>
+          <a href="services.html" class="nav-link text-gray-700 hover:text-blue-800 transition-colors font-medium">Storitve</a>
+          <a href="advantages.html" class="nav-link text-gray-700 hover:text-blue-800 transition-colors font-medium">Naše prednosti</a>
+          <a href="about.html" class="nav-link text-gray-700 hover:text-blue-800 transition-colors font-medium">O nas</a>
+          <a href="contact.html" class="nav-link text-gray-700 hover:text-blue-800 transition-colors font-medium">Kontakt</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+          <button id="mobile-menu-btn" class="text-gray-700 hover:text-blue-800 focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu hidden md:hidden bg-white border-t">
+      <div class="px-4 py-4 space-y-3">
+        <a href="index.html" class="block text-gray-700 hover:text-blue-800 font-medium py-2">Domov</a>
+        <a href="services.html" class="block text-gray-700 hover:text-blue-800 font-medium py-2">Storitve</a>
+        <a href="advantages.html" class="block text-gray-700 hover:text-blue-800 font-medium py-2">Naše prednosti</a>
+        <a href="about.html" class="block text-gray-700 hover:text-blue-800 font-medium py-2">O nas</a>
+        <a href="contact.html" class="block text-gray-700 hover:text-blue-800 font-medium py-2">Kontakt</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-pattern min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center animate-fade-in">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+          Kontaktirajte nas
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto">
+          Vas zanimajo naše storitve? Odgovorili bomo v najkrajšem možnem času.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Content -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-12">
+        <!-- Contact Form -->
+        <div class="contact-card">
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+            <i class="fas fa-envelope text-blue-800 mr-2"></i>
+            Kontaktirajte nas
+          </h2>
+          <p class="text-gray-600 mb-8">
+            Zahtevajte ponudbo ali nas kontaktirajte s kakršnim koli vprašanjem. Odgovorili bomo v najkrajšem možnem času.
+          </p>
+
+          <form id="contactForm">
+            <div class="mb-6">
+              <label class="block text-gray-700 font-medium mb-2">Ime in priimek *</label>
+              <input type="text" class="form-input" placeholder="Vaše ime in priimek" required>
+            </div>
+
+            <div class="mb-6">
+              <label class="block text-gray-700 font-medium mb-2">Email *</label>
+              <input type="email" class="form-input" placeholder="vas@email.com" required>
+            </div>
+
+            <div class="mb-6">
+              <label class="block text-gray-700 font-medium mb-2">Telefon</label>
+              <input type="tel" class="form-input" placeholder="+386 000 000 000">
+            </div>
+
+            <div class="mb-6">
+              <label class="block text-gray-700 font-medium mb-2">Tematika *</label>
+              <select class="form-input" required>
+                <option value="">Izberite tematico</option>
+                <option value="ponudba">Zahteva ponudbe</option>
+                <option value="storitve">Informacije o storitvah</option>
+                <option value="računovodstvo">Računovodstvo</option>
+                <option value="davki">Davki</option>
+                <option value="drugo">Drugo</option>
+              </select>
+            </div>
+
+            <div class="mb-6">
+              <label class="block text-gray-700 font-medium mb-2">Sporočilo *</label>
+              <textarea class="form-input resize-none" rows="5" placeholder="Vaše sporočilo..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary w-full text-lg">
+              <i class="fas fa-paper-plane mr-2"></i>
+              Pošlji sporočilo
+            </button>
+          </form>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="space-y-6">
+          <!-- Main Office -->
+          <div class="contact-card">
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">
+              <i class="fas fa-building text-blue-800 mr-2"></i>
+              Glavni sedež - Ptuj
+            </h3>
+            <div class="space-y-3">
+              <div class="flex items-start">
+                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                  <i class="fas fa-map-marker-alt text-blue-800"></i>
+                </div>
+                <div>
+                  <p class="font-medium text-gray-900">Trstenjakova ulica 1</p>
+                  <p class="text-gray-600">2250 Ptuj</p>
+                </div>
+              </div>
+
+              <div class="flex items-center">
+                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                  <i class="fas fa-phone text-blue-800"></i>
+                </div>
+                <div>
+                  <p class="font-medium text-gray-900">Telefon:</p>
+                  <p class="text-gray-600">02 771 99 71</p>
+                </div>
+              </div>
+
+              <div class="flex items-center">
+                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                  <i class="fas fa-envelope text-blue-800"></i>
+                </div>
+                <div>
+                  <p class="font-medium text-gray-900">Email:</p>
+                  <p class="text-gray-600">info@anni-info.si</p>
+                </div>
+              </div>
+
+              <div class="flex items-center">
+                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                  <i class="fas fa-mobile-alt text-blue-800"></i>
+                </div>
+                <div>
+                  <p class="font-medium text-gray-900">Mobilni:</p>
+                  <p class="text-gray-600">051 636 242</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-6 border-t">
+              <p class="text-gray-700">
+                <i class="fas fa-map-pin text-blue-800 mr-2"></i>
+                Nahajamo se v centru mesta, nasproti Finančnega urada Ptuj
+              </p>
+            </div>
+          </div>
+
+          <!-- Secondary Office -->
+          <div class="contact-card">
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">
+              <i class="fas fa-building text-blue-800 mr-2"></i>
+              Poslovna enota - Domžale
+            </h3>
+            <div class="space-y-3">
+              <div class="flex items-start">
+                <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                  <i class="fas fa-map-marker-alt text-green-800"></i>
+                </div>
+                <div>
+                  <p class="font-medium text-gray-900">Ulica Hermana Potočnika 4</p>
+                  <p class="text-gray-600">1230 Domžale</p>
+                </div>
+              </div>
+
+              <div class="flex items-center">
+                <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                  <i class="fas fa-id-card text-green-800"></i>
+                </div>
+                <div>
+                  <p class="font-medium text-gray-900">ID za DDV:</p>
+                  <p class="text-gray-600">SI36505676</p>
+                </div>
+              </div>
+
+              <div class="flex items-center">
+                <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                  <i class="fas fa-globe text-green-800"></i>
+                </div>
+                <div>
+                  <p class="font-medium text-gray-900">M.št.:</p>
+                  <p class="text-gray-600">1458361000</p>
+                </div>
+              </div>
+
+              <div class="flex items-center">
+                <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                  <i class="fas fa-university text-green-800"></i>
+                </div>
+                <div>
+                  <p class="font-medium text-gray-900">TRR:</p>
+                  <p class="text-gray-600">0215 0025 6910 119</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Google Maps -->
+  <section class="py-12 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
+        Lokacije
+      </h2>
+      <div class="map-container h-96 bg-gray-200 flex items-center justify-center">
+        <div class="text-center">
+          <i class="fas fa-map-marked-alt text-6xl text-gray-400 mb-4"></i>
+          <p class="text-gray-600">Mapa se bo naložila</p>
+          <p class="text-gray-500 text-sm">Ptuj in Domžale, Slovenija</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div class="md:col-span-2">
+          <h3 class="text-2xl font-bold mb-4">ANNI-INFO d.o.o.</h3>
+          <p class="text-gray-400 mb-6">
+            Profesionalni računovodski servis z dolgoletno tradicijo in strokovnostjo v Sloveniji.
+          </p>
+          <div class="flex gap-4">
+            <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-800 transition-colors">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-800 transition-colors">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-4">Navigacija</h4>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Domov</a></li>
+            <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Storitve</a></li>
+            <li><a href="advantages.html" class="text-gray-400 hover:text-white transition-colors">Naše prednosti</a></li>
+            <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">O nas</a></li>
+            <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Kontakt</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-4">Kontakt</h4>
+          <ul class="space-y-2 text-gray-400">
+            <li>02 771 99 71</li>
+            <li>info@anni-info.si</li>
+            <li>Ptuj, Slovenija</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+        <p>&copy; 2024 ANNI-INFO d.o.o. Vse pravice pridržane.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Form submission
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Hvala za vaše sporočilo! Odgovorili bomo v najkrajšem možnem času.');
+      this.reset();
+    });
+  </script>
+</body>
+</html>

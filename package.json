@@ -1,0 +1,23 @@
+{
+  "name": "anni-info-website",
+  "version": "1.0.0",
+  "description": "Modern website for ANNI-INFO d.o.o.",
+  "main": "index.html",
+  "scripts": {
+    "build:css": "sass styles/main.scss:styles/main.css --watch",
+    "build": "npm run build:css",
+    "dev": "npx tailwindcss -i ./styles/main.scss -o ./styles/main.css --watch"
+  },
+  "keywords": [
+    "website",
+    "tailwind",
+    "scss",
+    "responsive"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.69.0",
+    "tailwindcss": "^3.3.5"
+  }
+}
