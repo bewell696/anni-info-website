@@ -1,0 +1,14 @@
+# Gmail CLI - Python Dependencies
+
+# Gmail API client
+google-api-python-client>=2.0.0
+google-auth>=2.0.0
+google-auth-oauthlib>=1.0.0
+google-auth-httplib2>=0.2.0
+
+# CLI framework
+click>=8.0.0
+
+# Additional utilities (optional)
+python-dotenv>=1.0.0
+requests>=2.0.0
