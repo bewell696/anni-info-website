@@ -3,7 +3,18 @@
   "name": "anni-info-website",
   "compatibility_date": "2026-09-03",
   "assets": {
-    "directory": "./public",
-    "exclude": ["node_modules/**", ".git/**"]
+    "directory": ".",
+    "include": [
+      "*.html",
+      "styles/**"
+    ],
+    "exclude": [
+      "node_modules/**",
+      "*.md",
+      "*.py",
+      "*.sh",
+      "*.json",
+      "*.txt"
+    ]
   }
 }
