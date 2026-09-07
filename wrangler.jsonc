@@ -1,0 +1,9 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "anni-info-website",
+  "compatibility_date": "2026-09-03",
+  "assets": {
+    "directory": "./public",
+    "exclude": ["node_modules/**", ".git/**"]
+  }
+}
